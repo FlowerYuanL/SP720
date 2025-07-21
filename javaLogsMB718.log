@@ -1,0 +1,21 @@
+2025-07-20 21:32:36,875 [main] [com.lsxp.mapper.UserAccountMapper.findPasswordByAccount] - [DEBUG] ==>  Preparing: select password from user_account where account = ?
+2025-07-20 21:32:36,902 [main] [com.lsxp.mapper.UserAccountMapper.findPasswordByAccount] - [DEBUG] ==> Parameters: 123(String)
+2025-07-20 21:32:36,922 [main] [com.lsxp.mapper.UserAccountMapper.findPasswordByAccount] - [DEBUG] <==      Total: 1
+2025-07-20 21:32:48,664 [main] [org.apache.ibatis.logging.LogFactory] - [DEBUG] Logging initialized using 'class org.apache.ibatis.logging.slf4j.Slf4jImpl' adapter.
+2025-07-20 21:32:48,670 [main] [org.apache.ibatis.io.VFS] - [DEBUG] Using VFS adapter org.apache.ibatis.io.JBoss6VFS
+2025-07-20 21:32:48,675 [main] [org.apache.ibatis.io.ResolverUtil] - [DEBUG] Checking to see if class com.lsxp.pojo.UserAccount matches criteria [is assignable to Object]
+2025-07-20 21:32:48,708 [main] [org.apache.ibatis.datasource.pooled.PooledDataSource] - [DEBUG] PooledDataSource forcefully closed/removed all connections.
+2025-07-20 21:32:48,709 [main] [org.apache.ibatis.datasource.pooled.PooledDataSource] - [DEBUG] PooledDataSource forcefully closed/removed all connections.
+2025-07-20 21:32:48,709 [main] [org.apache.ibatis.datasource.pooled.PooledDataSource] - [DEBUG] PooledDataSource forcefully closed/removed all connections.
+2025-07-20 21:32:48,709 [main] [org.apache.ibatis.datasource.pooled.PooledDataSource] - [DEBUG] PooledDataSource forcefully closed/removed all connections.
+2025-07-20 21:32:48,711 [main] [org.apache.ibatis.io.ResolverUtil] - [DEBUG] Checking to see if class com.lsxp.mapper.UserAccountMapperTest matches criteria [is assignable to Object]
+2025-07-20 21:32:48,711 [main] [org.apache.ibatis.io.ResolverUtil] - [DEBUG] Checking to see if class com.lsxp.dao.UserAccountDaoTest matches criteria [is assignable to Object]
+2025-07-20 21:32:48,711 [main] [org.apache.ibatis.io.ResolverUtil] - [DEBUG] Checking to see if class com.lsxp.mapper.UserAccountMapper matches criteria [is assignable to Object]
+2025-07-20 21:32:48,711 [main] [org.apache.ibatis.io.ResolverUtil] - [DEBUG] Checking to see if class com.lsxp.dao.UserAccountDao matches criteria [is assignable to Object]
+2025-07-20 21:32:48,711 [main] [org.apache.ibatis.io.ResolverUtil] - [DEBUG] Checking to see if class com.lsxp.dao.impl.UserDaoImpl matches criteria [is assignable to Object]
+2025-07-20 21:32:48,764 [main] [org.apache.ibatis.transaction.jdbc.JdbcTransaction] - [DEBUG] Opening JDBC Connection
+2025-07-20 21:32:48,912 [main] [org.apache.ibatis.datasource.pooled.PooledDataSource] - [DEBUG] Created connection 1334042472.
+2025-07-20 21:32:48,913 [main] [org.apache.ibatis.transaction.jdbc.JdbcTransaction] - [DEBUG] Setting autocommit to false on JDBC Connection [com.mysql.cj.jdbc.ConnectionImpl@4f83df68]
+2025-07-20 21:32:48,916 [main] [com.lsxp.mapper.UserAccountMapper.findPasswordByAccount] - [DEBUG] ==>  Preparing: select password from user_account where account = ?
+2025-07-20 21:32:48,939 [main] [com.lsxp.mapper.UserAccountMapper.findPasswordByAccount] - [DEBUG] ==> Parameters: 123(String)
+2025-07-20 21:32:48,962 [main] [com.lsxp.mapper.UserAccountMapper.findPasswordByAccount] - [DEBUG] <==      Total: 1
