@@ -1,12 +1,11 @@
 package com.lsxp.service.impl;
 
-import com.lsxp.dao.UserAccountDao;
-import com.lsxp.dao.impl.UserAccountDaoImpl;
+
 import com.lsxp.mapper.UserAccountMapper;
 import com.lsxp.service.UserAccountService;
-import com.lsxp.utils.MyBatisUtils;
+
 import lombok.Setter;
-import org.apache.ibatis.session.SqlSession;
+
 
 
 public class UserAccountServiceImpl implements UserAccountService {

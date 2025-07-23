@@ -7,70 +7,70 @@
     <!--加载属性文件,该方式有问题，目前不知道为什么-->
     <!--<context:property-placeholder location="classpath:db.properties"/>-->
 
-    <!--配置数据库连接-->
+<!--    &lt;!&ndash;配置数据库连接&ndash;&gt;
     <bean id="dataSource" class="com.alibaba.druid.pool.DruidDataSource" destroy-method="close">
-        <!-- JDBC驱动 -->
+        &lt;!&ndash; JDBC驱动 &ndash;&gt;
         <property name="driverClassName" value="com.mysql.cj.jdbc.Driver"/>
 
-        <!-- 数据库连接URL，包含字符编码、时区、SSL等配置 -->
+        &lt;!&ndash; 数据库连接URL，包含字符编码、时区、SSL等配置 &ndash;&gt;
         <property name="url"
                   value="jdbc:mysql://localhost:3306/sp720?allowPublicKeyRetrieval=true&amp;serverTimezone=Asia/Shanghai&amp;characterEncoding=utf8&amp;useUnicode=true&amp;useSSL=false"/>
 
-        <!-- 数据库用户名和密码 -->
+        &lt;!&ndash; 数据库用户名和密码 &ndash;&gt;
         <property name="username" value="root"/>
         <property name="password" value="lsxp3112"/>
 
-        <!-- ======================== 连接池配置 ======================== -->
+        &lt;!&ndash; ======================== 连接池配置 ======================== &ndash;&gt;
 
-        <!-- 初始化连接数：初始化时建立的物理连接数量 -->
+        &lt;!&ndash; 初始化连接数：初始化时建立的物理连接数量 &ndash;&gt;
         <property name="initialSize" value="5"/>
 
-        <!-- 最小空闲连接数：最少保持多少个空闲连接不被关闭 -->
+        &lt;!&ndash; 最小空闲连接数：最少保持多少个空闲连接不被关闭 &ndash;&gt;
         <property name="minIdle" value="5"/>
 
-        <!-- 最大活跃连接数：连接池中最多可同时分配的连接数 -->
+        &lt;!&ndash; 最大活跃连接数：连接池中最多可同时分配的连接数 &ndash;&gt;
         <property name="maxActive" value="20"/>
 
-        <!-- 获取连接时最大等待时间（单位：毫秒），超时会抛出异常 -->
+        &lt;!&ndash; 获取连接时最大等待时间（单位：毫秒），超时会抛出异常 &ndash;&gt;
         <property name="maxWait" value="60000"/>
 
-        <!-- 多久执行一次空闲连接回收器的运行（单位：毫秒） -->
+        &lt;!&ndash; 多久执行一次空闲连接回收器的运行（单位：毫秒） &ndash;&gt;
         <property name="timeBetweenEvictionRunsMillis" value="60000"/>
 
-        <!-- 连接保持空闲而不被驱逐的最小时间（单位：毫秒） -->
+        &lt;!&ndash; 连接保持空闲而不被驱逐的最小时间（单位：毫秒） &ndash;&gt;
         <property name="minEvictableIdleTimeMillis" value="300000"/>
 
-        <!-- 用于检测连接是否有效的SQL语句 -->
+        &lt;!&ndash; 用于检测连接是否有效的SQL语句 &ndash;&gt;
         <property name="validationQuery" value="SELECT 1"/>
 
-        <!-- 空闲时检查连接是否有效，建议设为true -->
+        &lt;!&ndash; 空闲时检查连接是否有效，建议设为true &ndash;&gt;
         <property name="testWhileIdle" value="true"/>
 
-        <!-- 获取连接时不进行测试，提升性能（一般与 testWhileIdle 配合使用） -->
+        &lt;!&ndash; 获取连接时不进行测试，提升性能（一般与 testWhileIdle 配合使用） &ndash;&gt;
         <property name="testOnBorrow" value="false"/>
 
-        <!-- 归还连接时不进行测试 -->
+        &lt;!&ndash; 归还连接时不进行测试 &ndash;&gt;
         <property name="testOnReturn" value="false"/>
     </bean>
 
 
-    <!--使用MyBatis SqlSessionFactory-->
+    &lt;!&ndash;使用MyBatis SqlSessionFactory&ndash;&gt;
     <bean id="sqlSessionFactory" class="org.mybatis.spring.SqlSessionFactoryBean">
         <property name="dataSource" ref="dataSource"/>
         <property name="configLocation" value="classpath:mybatis-config.xml"/>
     </bean>
 
-    <!--mapper扫描-->
+    &lt;!&ndash;mapper扫描&ndash;&gt;
     <bean id="userAccountMapper" class="org.mybatis.spring.mapper.MapperFactoryBean">
         <property name="mapperInterface" value="com.lsxp.mapper.UserAccountMapper"/>
         <property name="sqlSessionFactory" ref="sqlSessionFactory"/>
-    </bean>
+    </bean>-->
 
     <!-- beans definitions here -->
     <!--HelloString HelloSpring-->
-    <bean class="com.lsxp.HelloSpring" id="helloSpring">
+    <!--<bean class="com.lsxp.HelloSpring" id="helloSpring">
         <property name="userName" value="Elio"/>
-    </bean>
+    </bean>-->
 
     <!--通过构造函数注入依赖-->
     <!--User User-->
@@ -83,33 +83,33 @@
         value：用来给基本类型赋值的
         ref：用来给引用类型进行赋值的
     -->
-    <bean id="User" class="com.lsxp.User">
+    <!--<bean id="User" class="com.lsxp.User">
 
-        <!--通过name注入参数-->
+        &lt;!&ndash;通过name注入参数&ndash;&gt;
         <constructor-arg name="id" value="1"/>
         <constructor-arg name="age" value="18"/>
         <constructor-arg name="name" value="zyy"/>
 
-        <!--通过type注入参数，此时需要保证顺序,两个相同的类型，如果顺序不对会传入错误的参数-->
-        <!--<constructor-arg type="java.lang.Integer" value="1"/>
+        &lt;!&ndash;通过type注入参数，此时需要保证顺序,两个相同的类型，如果顺序不对会传入错误的参数&ndash;&gt;
+        &lt;!&ndash;<constructor-arg type="java.lang.Integer" value="1"/>
         <constructor-arg type="java.lang.Integer" value="18"/>
-        <constructor-arg type="java.lang.String" value="zyy"/>-->
+        <constructor-arg type="java.lang.String" value="zyy"/>&ndash;&gt;
 
-        <!--通过index注入参数,依据构造函数中参数的顺序索引
+        &lt;!&ndash;通过index注入参数,依据构造函数中参数的顺序索引
         <constructor-arg index="0" value="1"/>
         <constructor-arg index="1" value="18"/>
-        <constructor-arg index="2" value="zyy"/>-->
-    </bean>
+        <constructor-arg index="2" value="zyy"/>&ndash;&gt;
+    </bean>-->
 
     <!--通过setter方法注入依赖-->
     <!--Column setter-->
-    <bean id="Column" class="com.lsxp.Column">
+    <!--<bean id="Column" class="com.lsxp.Column">
         <property name="Id" value="1"/>
         <property name="Name" value="zyy"/>
         <property name="Job" value="teacher"/>
 
         <property name="user" ref="User"/>
-    </bean>
+    </bean>-->
 
     <!--Dao.UserAccountDao-->
 
@@ -118,4 +118,24 @@
     <bean id="userAccountService" class="com.lsxp.service.impl.UserAccountServiceImpl">
         <property name="userAccountMapper" ref="userAccountMapper"/>
     </bean>
+
+    <!--sp_1Test.show-->
+    <bean id="sp_1Test" class="com.lsxp.service.impl.sp_1TestImpl" lazy-init="true">
+
+    </bean>
+
+    <!--testBean.testBean-->
+    <bean id="testBean" class="com.lsxp.beans.testBean"/>
+
+    <!--name userAccountMapper CreateUserAccountMapper.getMapper-->
+
+    <bean id="userAccountMapper" class="com.lsxp.mapper.impl.CreateUserAccountMapper" factory-method="getMapper"/>
+
+    <!--name userAccountMapper CreateUserAccountMapper.getMapper-->
+    <!--bean-factory-->
+    <!--实例化工厂对象-->
+    <bean id="createUserAccountMapper" class="com.lsxp.mapper.impl.CreateUserAccountMapper"/>
+    <!--target-bean-->
+    <bean id="userAccountMapperQ" factory-bean="createUserAccountMapper" factory-method="createMapper"/>
+
 </beans>
