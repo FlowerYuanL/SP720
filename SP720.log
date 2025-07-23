@@ -430,3 +430,9 @@ PropertyAccessException 1: org.springframework.beans.MethodInvocationException: 
 2025-07-23 10:03:24,414 [main] [com.lsxp.mapper.UserAccountMapper.findPasswordByAccount] - [DEBUG] ==>  Preparing: select password from user_account where account = ?
 2025-07-23 10:03:24,441 [main] [com.lsxp.mapper.UserAccountMapper.findPasswordByAccount] - [DEBUG] ==> Parameters: 123(String)
 2025-07-23 10:03:24,476 [main] [com.lsxp.mapper.UserAccountMapper.findPasswordByAccount] - [DEBUG] <==      Total: 1
+2025-07-23 10:17:39,956 [main] [com.lsxp.mapper.UserAccountMapper.findPasswordByAccount] - [DEBUG] ==>  Preparing: select password from user_account where account = ?
+2025-07-23 10:17:39,981 [main] [com.lsxp.mapper.UserAccountMapper.findPasswordByAccount] - [DEBUG] ==> Parameters: 123(String)
+2025-07-23 10:17:40,003 [main] [com.lsxp.mapper.UserAccountMapper.findPasswordByAccount] - [DEBUG] <==      Total: 1
+2025-07-23 10:18:51,699 [main] [com.lsxp.mapper.UserAccountMapper.findPasswordByAccount] - [DEBUG] ==>  Preparing: select password from user_account where account = ?
+2025-07-23 10:18:51,726 [main] [com.lsxp.mapper.UserAccountMapper.findPasswordByAccount] - [DEBUG] ==> Parameters: 123(String)
+2025-07-23 10:18:51,750 [main] [com.lsxp.mapper.UserAccountMapper.findPasswordByAccount] - [DEBUG] <==      Total: 1

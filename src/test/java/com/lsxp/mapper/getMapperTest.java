@@ -24,4 +24,12 @@ public class getMapperTest {
         String password = userAccountMapper.findPasswordByAccount("123");
         System.out.println(password);
     }
+
+    @Test
+    public void test3() {
+        ApplicationContext ac = new ClassPathXmlApplicationContext("applicationContext.xml");
+        UserAccountMapper userAccountMapper = (UserAccountMapper) ac.getBean("userAccountMapperQQ");
+        String password = userAccountMapper.findPasswordByAccount("123");
+        System.out.println(password);
+    }
 }

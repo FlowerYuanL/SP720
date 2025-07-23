@@ -138,4 +138,28 @@
     <!--target-bean-->
     <bean id="userAccountMapperQ" factory-bean="createUserAccountMapper" factory-method="createMapper"/>
 
+    <!--实现FactoryBean接口-->
+    <bean id="userAccountMapperQQ" class="com.lsxp.mapper.impl.GetUserAccountMapper" lazy-init="true"></bean>
+
+    <!--垃圾Bean回收中心-->
+    <bean id="garbegeBean" class="com.lsxp.beans.garbageBean" scope="prototype">
+    </bean>
+
+    <bean id="bean1" class="com.lsxp.beans.bean1" lazy-init="true">
+        <!--DI（装配）：依赖注入-->
+        <!--value可以为基本类型赋值-->
+        <property name="id" value="1"/>
+        <property name="name" value="zhangsan"/>
+        <property name="age" value="18"/>
+        <!--ref可以为类赋值-->
+        <property name="bean2" ref="bean2"/>
+     </bean>
+
+    <bean id="bean2" class="com.lsxp.beans.bean2" lazy-init="true">
+        <property name="id" value="2"/>
+    </bean>
+
+
+
+    <!--垃圾Bean回收中心-->
 </beans>
